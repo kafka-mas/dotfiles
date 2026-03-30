@@ -1,0 +1,8 @@
+#alias sudo='sudo -v; sudo '
+alias pacman='sudo pacman'
+alias icat="kitten icat"
+alias cl="clear&&fastfetch"
+fastfetch
+#hyprctl clients
+#echo -e "\n\n\n\n"
+#hyprctl layers
