@@ -3,6 +3,7 @@ alias pacman='sudo pacman'
 alias icat="kitten icat"
 alias cl="clear&&fastfetch"
 alias checkupdates="checkupdates | tee >(tgsend -d)"
+alias v="nvim"
 fastfetch
 #hyprctl clients
 #echo -e "\n\n\n\n"
