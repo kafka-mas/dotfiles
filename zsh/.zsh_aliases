@@ -3,7 +3,11 @@ alias pacman='sudo pacman'
 alias icat="kitten icat"
 alias cl="clear&&fastfetch"
 alias checkupdates="checkupdates | tee >(tgsend -d)"
+<<<<<<< Updated upstream
 alias v="nvim"
+=======
+alias hibernate="sleep 5; systemctl hibernate"
+>>>>>>> Stashed changes
 fastfetch
 #hyprctl clients
 #echo -e "\n\n\n\n"
