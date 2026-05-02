@@ -1,23 +1,27 @@
-vim.opt.number = true						-- Номера строк
-vim.opt.relativenumber = true				-- Относительная нумерация
+vim.opt.number = true							-- Номера строк
+vim.opt.relativenumber = true					-- Относительная нумерация
 
 local width = 4
-vim.opt.tabstop = width						-- Ширина таба
-vim.opt.shiftwidth = width					-- Размер отступа
+vim.opt.tabstop = width							-- Ширина таба
+vim.opt.shiftwidth = width						-- Размер отступа
 vim.opt.softtabstop = width
--- vim.opt.expandtab = true					-- Преобразовать табы в пробелы
-vim.opt.smartindent = true					-- Умные отступы
+-- vim.opt.expandtab = true						-- Преобразовать табы в пробелы
+vim.opt.smartindent = true						-- Умные отступы
 
-vim.opt.cursorline = true					-- Подсветка текущей строки
+vim.opt.cursorline = true						-- Подсветка текущей строки
 vim.opt.colorcolumn = "81"
 
-vim.opt.ignorecase = true					-- Игнорировать регистр
-vim.opt.smartcase = true					-- Умное игнорирование регистра
+vim.opt.ignorecase = true						-- Игнорировать регистр
+vim.opt.smartcase = true						-- Умное игнорирование регистра
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.winborder = "rounded"
 
 vim.opt.wrap = false
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.termguicolors = true
 
 vim.opt.list = true
 vim.opt.listchars = {

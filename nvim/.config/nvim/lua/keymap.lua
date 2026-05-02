@@ -1,5 +1,5 @@
 -- DEFAULT --
-vim.keymap.set("n", "<leader>e", "<Cmd>Explore<CR>")
+vim.keymap.set("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>s", "<Cmd>luafile $MYVIMRC<CR>")
 vim.keymap.set("n", "<ESC><ESC>", "<Cmd>nohlsearch<CR>")
 

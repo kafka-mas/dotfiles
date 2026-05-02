@@ -8,6 +8,7 @@ vim.pack.add({
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/akinsho/toggleterm.nvim" },
+	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
 })
 
 
@@ -19,6 +20,13 @@ require("mason").setup({})
 
 -- LUALINE --
 require("lualine").setup()
+
+-- NVIM-TREE --
+require("nvim-tree").setup({
+	view = {
+		width = 30,
+	},
+})
 
 -- FZF --
 local actions = require("fzf-lua.actions")
