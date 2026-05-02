@@ -9,6 +9,8 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
+	{src="https://github.com/nvim-mini/mini.comment"},
+	-- { src = "https://github.com/numtostr/comment.nvim" },
 })
 
 
@@ -27,6 +29,19 @@ require("nvim-tree").setup({
 		width = 30,
 	},
 })
+
+-- COMMENTER --
+require("mini.comment")
+-- require("Comment").setup({
+-- 	extra = {
+-- 		---Add comment on the line above
+-- 		above = 'gcO',
+-- 		---Add comment on the line below
+-- 		below = 'gco',
+-- 		---Add comment at the end of line
+-- 		eol = 'gcA',
+-- 	}
+-- })
 
 -- FZF --
 local actions = require("fzf-lua.actions")
