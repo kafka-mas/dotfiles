@@ -1,7 +1,7 @@
 vim.opt.number = true						-- Номера строк
 vim.opt.relativenumber = true				-- Относительная нумерация
 
-local width = 2
+local width = 4
 vim.opt.tabstop = width						-- Ширина таба
 vim.opt.shiftwidth = width					-- Размер отступа
 vim.opt.softtabstop = width

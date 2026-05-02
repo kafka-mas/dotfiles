@@ -4,7 +4,10 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
-	{ src = "https://github.com/saghen/blink.cmp",         version = vim.version.range("^1") },
+	{ src = "https://github.com/saghen/blink.cmp",            version = vim.version.range("^1") },
+	{ src = "https://github.com/rafamadriz/friendly-snippets" },
+	{ src = "https://github.com/windwp/nvim-autopairs" },
+	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 })
 
 
@@ -15,11 +18,11 @@ require("everforest").setup({})
 require("mason").setup({})
 
 -- LUALINE --
-require('lualine').setup()
+require("lualine").setup()
 
 -- FZF --
-local actions = require('fzf-lua.actions')
-require('fzf-lua').setup({
+local actions = require("fzf-lua.actions")
+require("fzf-lua").setup({
 	winopts = { backdrop = 85 },
 	keymap = {
 		builtin = {
@@ -46,24 +49,27 @@ require('fzf-lua').setup({
 })
 
 -- BLINK --
-require('blink.cmp').setup({
-	fuzzy = { implementation = 'prefer_rust_with_warning' },
+require("blink.cmp").setup({
+	fuzzy = { implementation = "prefer_rust" },
 	signature = { enabled = true },
 	keymap = {
 		preset = "default",
-		["<C-space>"] = {},
-		["<C-p>"] = {},
-		["<Tab>"] = {},
-		["<S-Tab>"] = {},
+		["<Tab>"] = { "select_and_accept", "fallback" },
+		["<A-CR>"] = { "select_and_accept", "fallback" },
 		["<C-y>"] = { "show", "show_documentation", "hide_documentation" },
-		["<C-n>"] = { "select_and_accept" },
 		["<C-k>"] = { "select_prev", "fallback" },
 		["<C-j>"] = { "select_next", "fallback" },
 		["<C-b>"] = { "scroll_documentation_down", "fallback" },
 		["<C-f>"] = { "scroll_documentation_up", "fallback" },
-		["<C-l>"] = { "snippet_forward", "fallback" },
-		["<C-h>"] = { "snippet_backward", "fallback" },
-		-- ["<C-e>"] = { "hide" },
+		["<A-Tab>"] = { "snippet_forward", "fallback" },
+		["<A-S-Tab>"] = { "snippet_backward", "fallback" },
+		-- Signature
+		["<C-u>"] = { "scroll_signature_up", "fallback" },
+		["<C-d>"] = { "scroll_signature_down", "fallback" },
+
+		-- default in all keymap presets
+		-- ["<C-s>"] = { "show_signature", "hide_signature", "fallback" },
+		["<C-s>"] = { "show_documentation", "hide_documentation", "fallback" }
 	},
 
 	appearance = {
@@ -72,18 +78,34 @@ require('blink.cmp').setup({
 	},
 
 	completion = {
+		list = { selection = { preselect = true, auto_insert = false } },
+		menu = { auto_show = true },
 		documentation = {
 			auto_show = true,
 			auto_show_delay_ms = 200,
-		}
+		},
+		ghost_text = { enabled = true },
 	},
 
 	cmdline = {
 		keymap = {
-			preset = 'inherit',
-			['<CR>'] = { 'accept_and_enter', 'fallback' },
+			preset = "inherit",
+			completion = { menu = { auto_show = true } },
+			["<CR>"] = { "accept_and_enter", "fallback" },
 		},
 	},
 
-	sources = { default = { "lsp" } }
+	sources = {
+		default = { "lsp", "path", "snippets" }
+	}
 })
+
+-- NVIM-AUTOPAIRS --
+require("nvim-autopairs").setup {}
+
+-- TOGGLETERM --
+require("toggleterm").setup {
+	open_mapping = [[<c-\>]],
+	size = 20,
+	persist_mode = true,
+}
