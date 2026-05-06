@@ -4,6 +4,8 @@ alias icat="kitten icat"
 alias cl="clear&&fastfetch"
 alias checkupdates="checkupdates | tee >(tgsend -d)"
 alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 alias hibernate="sleep 5; systemctl hibernate"
 fastfetch
 #hyprctl clients
