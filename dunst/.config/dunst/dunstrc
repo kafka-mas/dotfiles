@@ -36,18 +36,18 @@
     #       and the given value is treated as the maximum height
 
     # Position the notification in the top right corner
-    origin = top-left
+    origin = bottom-right
 
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     # offset = 10x50
-    offset = (5, 0)
+    offset = (5, 5)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
 
     # Maximum number of notification (0 means no limit)
-    notification_limit = 5
+    notification_limit = 3
 
     ### Progress bar ###
 
@@ -348,7 +348,7 @@
     frame_color = "#7A8478D5"
     background = "#2D353B"
 #    foreground = "#888888"
-    timeout = 5
+    timeout = 3
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
@@ -356,7 +356,7 @@
     frame_color = "#7FBBB3D5"
     background = "3A515D45"
 #    foreground = "#D3C6AA"
-    timeout = 5
+    timeout = 3
     override_pause_level = 30
     # Icon for notifications with normal urgency
     default_icon = dialog-information
