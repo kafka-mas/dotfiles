@@ -8,7 +8,3 @@ find . -maxdepth 1 -type d ! -name "." -printf "%f\n" | grep -v -E "^($exclude)$
     echo "stow $dir"
     stow $dir
 done
-
-echo ""
-echo "Setup wallpapers"
-awww img ~/.config/wallpapers/autumn_forest.jpg
