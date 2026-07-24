@@ -1,5 +1,3 @@
-#alias sudo='sudo -v; sudo '
-alias pacman='sudo pacman'
 alias icat="kitten icat"
 alias cl="clear&&fastfetch"
 alias checkupdates="checkupdates | tee >(tgsend -d)"
@@ -10,6 +8,3 @@ alias vim="nvim"
 alias hibernate="sleep 5; systemctl hibernate"
 alias grep='grep --color=auto'
 fastfetch
-#hyprctl clients
-#echo -e "\n\n\n\n"
-#hyprctl layers
